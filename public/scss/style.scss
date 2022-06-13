@@ -1,0 +1,84 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    min-width: 100vw;
+    background-color: rgb(17, 16, 16);
+}
+
+.potion-container {
+    //position: absolute;
+    //display: flex;
+    //justify-content: center;
+    //align-items: center;
+
+    .background {
+        --main-bg-color: #6E6362;
+        --main-circle-size: 60rem;
+
+        position: relative;
+        width: var(--main-circle-size);
+        height: var(--main-circle-size);
+        border-radius: 50%;
+        background-color: var(--main-bg-color);
+    }
+
+    .background::before {
+        content: "";
+
+        --circle-ring-size: calc(var(--main-circle-size)/16);
+        --circle-ring-colour: #827473;
+        --ring-shadow-colour: #564E4D;
+
+        position: absolute;
+        top: -2%;
+        left: 50%;
+        transform: translateX(-50%);
+
+        width: 40%;
+        height: 10%;
+        border-radius: 50%;
+        border: var(--circle-ring-size) solid var(--circle-ring-colour);
+        box-shadow: 0 calc(var(--circle-ring-size)/2) var(--ring-shadow-colour);
+    }
+
+    .background::after{
+        content: "";
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        width: 50%;
+        height: 30%;
+        border-radius: 50%;
+        background-color: white;
+        opacity: 10%;
+    }
+
+    .liquid {
+        --liquid-colour: #0DCCD3;
+        position: absolute;
+        top: 50%;
+        left: 2%;
+        bottom: 2%;
+        right: 2%;
+
+        border-radius: 0 0 calc(var(--main-circle-size)/2) calc(var(--main-circle-size)/2);
+        background-color: var(--liquid-colour);
+        filter: drop-shadow(0 0 calc(var(--main-circle-size)/10) var(--liquid-colour));
+    }
+
+    .liquid::after {
+        content: "";
+
+        --liquid-surface-colour: #56EEF4;
+        position: absolute;
+        transform: translateY(-49%);
+        width: 100%;
+        height: 40%;
+        border-radius: 50%;
+        background-color: var(--liquid-surface-colour);
+    }
+}
