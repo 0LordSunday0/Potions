@@ -1,3 +1,9 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
 body {
   min-height: 100vh;
   min-width: 100vw;
@@ -7,21 +13,53 @@ body {
   display: flex;
 }
 
-.potion-container .background {
+.potion-container {
   --main-bg-color: #6e6362;
-  --main-circle-size: 60rem;
+  --main-circle-size: 50rem;
   width: var(--main-circle-size);
   height: var(--main-circle-size);
+  --circle-ring-size: calc(var(--main-circle-size) / 16);
+  --circle-ring-colour: #827473;
+  --ring-shadow-colour: #564e4d;
+  position: absolute;
+}
+
+.potion-container .background {
+  width: 100%;
+  height: 100%;
   background-color: var(--main-bg-color);
+  transform-origin: bottom;
   border-radius: 50%;
+  animation: rock 3s linear infinite;
   position: relative;
+}
+
+@keyframes rock {
+  0% {
+    filter: hue-rotate();
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(15deg);
+  }
+
+  50% {
+    transform: rotate(0deg);
+  }
+
+  75% {
+    transform: rotate(-15deg);
+  }
+
+  100% {
+    filter: hue-rotate(360deg);
+    transform: rotate(0deg);
+  }
 }
 
 .potion-container .background:before {
   content: "";
-  --circle-ring-size: calc(var(--main-circle-size) / 16);
-  --circle-ring-colour: #827473;
-  --ring-shadow-colour: #564e4d;
   width: 40%;
   height: 10%;
   border: var(--circle-ring-size) solid var(--circle-ring-colour);
@@ -51,8 +89,32 @@ body {
   border-radius: 0 0 calc(var(--main-circle-size) / 2) calc(var(--main-circle-size) / 2);
   background-color: var(--liquid-colour);
   filter: drop-shadow(0 0 calc(var(--main-circle-size) / 10) var(--liquid-colour) );
+  transform-origin: top;
+  animation: liquid 3s linear infinite;
   position: absolute;
   inset: 50% 2% 2%;
+}
+
+@keyframes liquid {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(-20deg);
+  }
+
+  50% {
+    transform: rotate(0deg);
+  }
+
+  75% {
+    transform: rotate(20deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
 }
 
 .potion-container .liquid:after {
@@ -64,6 +126,17 @@ body {
   border-radius: 50%;
   position: absolute;
   transform: translateY(-49%);
+}
+
+.potion-container .shadow {
+  width: 100%;
+  height: 10%;
+  background-color: #211e1c;
+  border-radius: 50%;
+  position: absolute;
+  top: 95%;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 /*# sourceMappingURL=index.c74267d1.css.map */

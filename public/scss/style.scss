@@ -1,3 +1,9 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+
 body{
     display: flex;
     justify-content: center;
@@ -8,29 +14,46 @@ body{
 }
 
 .potion-container {
-    //position: absolute;
-    //display: flex;
-    //justify-content: center;
-    //align-items: center;
-
+    position: absolute;
+    --main-bg-color: #6E6362;
+    --main-circle-size: 50rem;
+    width: var(--main-circle-size);
+    height: var(--main-circle-size);
     .background {
-        --main-bg-color: #6E6362;
-        --main-circle-size: 60rem;
-
         position: relative;
-        width: var(--main-circle-size);
-        height: var(--main-circle-size);
+        width: 100%;
+        height: 100%;
         border-radius: 50%;
         background-color: var(--main-bg-color);
+        transform-origin: bottom;
+        animation: rock 3s linear infinite;
     }
 
+    @keyframes rock {
+        0% {
+            filter: hue-rotate(0deg);
+            transform: rotate(0deg);
+        }
+        25% {
+            transform: rotate(15deg);
+        }
+        50% {
+            transform: rotate(0deg);
+        }
+        75% {
+            transform: rotate(-15deg);
+        }
+        100% {
+            transform: rotate(0deg);
+            filter: hue-rotate(360deg);
+        }
+    }
+
+    --circle-ring-size: calc(var(--main-circle-size)/16);
+    --circle-ring-colour: #827473;
+    --ring-shadow-colour: #564E4D;
     .background::before {
         content: "";
-
-        --circle-ring-size: calc(var(--main-circle-size)/16);
-        --circle-ring-colour: #827473;
-        --ring-shadow-colour: #564E4D;
-
         position: absolute;
         top: -2%;
         left: 50%;
@@ -68,6 +91,28 @@ body{
         border-radius: 0 0 calc(var(--main-circle-size)/2) calc(var(--main-circle-size)/2);
         background-color: var(--liquid-colour);
         filter: drop-shadow(0 0 calc(var(--main-circle-size)/10) var(--liquid-colour));
+        transform-origin: top;
+        animation: liquid 3s linear infinite;
+    }
+
+    @keyframes liquid {
+        0% {
+            
+            transform: rotate(0deg);
+        }
+        25% {
+            transform: rotate(-20deg);
+        }
+        50% {
+            transform: rotate(0deg);
+        }
+        75% {
+            transform: rotate(20deg);
+        }
+        100% {
+            transform: rotate(0deg);
+            
+        }
     }
 
     .liquid::after {
@@ -80,5 +125,16 @@ body{
         height: 40%;
         border-radius: 50%;
         background-color: var(--liquid-surface-colour);
+    }
+
+    .shadow {
+        position: absolute;
+        top: 95%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        height: 10%;
+        border-radius: 50%;
+        background-color: #211E1C;
     }
 }
