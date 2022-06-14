@@ -1,0 +1,6 @@
+Two potions on side of different colour
+draggable, on click get the color of the potion.
+When dropped over a cell, check that it is empty
+if the cell is empty put the potion in
+check if the game is over yet
+button to reset game

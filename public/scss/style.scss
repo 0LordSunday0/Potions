@@ -11,8 +11,16 @@ body{
     background-color: rgb(17, 16, 16);
 }
 
+.controls {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    //background-color: green;
+}
+
 .potion-container {
     position: relative;
+    margin: 4rem;
     --main-bg-color: #6E6362;
     --main-circle-size: 16rem;
     width: var(--main-circle-size);
@@ -36,6 +44,7 @@ body{
             transform: rotate(15deg);
         }
         50% {
+            filter: hue-rotate(50deg);
             transform: rotate(0deg);
         }
         75% {
@@ -43,7 +52,7 @@ body{
         }
         100% {
             transform: rotate(0deg);
-            filter: hue-rotate(360deg);
+            filter: hue-rotate(0deg);
         }
     }
 
@@ -79,7 +88,14 @@ body{
     }
 
     .liquid {
-        --liquid-colour: #0DCCD3;
+        &#blue{
+            --liquid-colour: #0DCCD3;
+            --liquid-surface-colour: #56EEF4;
+        }
+        &#red{
+            --liquid-colour: #DF2935;
+            --liquid-surface-colour: #E44E58;
+        }
         position: absolute;
         top: 50%;
         left: 2%;
@@ -91,6 +107,7 @@ body{
         filter: drop-shadow(0 0 calc(var(--main-circle-size)/10) var(--liquid-colour));
         transform-origin: top;
         animation: liquid 3s linear infinite;
+        
     }
 
     @keyframes liquid {
@@ -115,8 +132,6 @@ body{
 
     .liquid::after {
         content: "";
-
-        --liquid-surface-colour: #56EEF4;
         position: absolute;
         transform: translateY(-49%);
         width: 100%;
