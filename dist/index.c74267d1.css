@@ -8,18 +8,36 @@ body {
   min-height: 100vh;
   min-width: 100vw;
   background-color: #111010;
+  justify-content: center;
+  align-items: center;
   display: flex;
 }
 
 .controls {
+  width: 20vw;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   margin: 1rem;
   display: flex;
 }
 
+.controls .spawn {
+  width: 6rem;
+  position: absolute;
+}
+
+.controls .spawn.red {
+  margin-bottom: 20rem;
+}
+
+.controls .spawn.blue {
+  margin-bottom: 40rem;
+}
+
 .potion-container {
   --main-bg-color: #6e6362;
-  --main-circle-size: 16rem;
+  --main-circle-size: 10rem;
   width: var(--main-circle-size);
   height: var(--main-circle-size);
   --circle-ring-size: calc(var(--main-circle-size) / 16);
@@ -27,6 +45,10 @@ body {
   --ring-shadow-colour: #564e4d;
   margin: 4rem;
   position: relative;
+}
+
+.potion-container.template {
+  display: none;
 }
 
 .potion-container .background {
@@ -173,6 +195,7 @@ body {
   justify-content: center;
   align-items: center;
   display: flex;
+  overflow: clip;
 }
 
 .zero-zero {

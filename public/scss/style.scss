@@ -6,6 +6,8 @@ html, body, ul, li {
 
 body{
     display: flex;
+    justify-content: center;
+    align-items: center;
     min-height: 100vh;
     min-width: 100vw;
     background-color: rgb(17, 16, 16);
@@ -14,15 +16,31 @@ body{
 .controls {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     margin: 1rem;
-    //background-color: green;
+    width: 20vw;
+
+    .spawn {
+        position: absolute;
+        width: 6rem;
+        &.red{
+            margin-bottom: 20rem;
+        }
+        &.blue{
+            margin-bottom: 40rem;
+        }
+    }
 }
 
 .potion-container {
+    &.template{
+        display: none;
+    }
     position: relative;
     margin: 4rem;
     --main-bg-color: #6E6362;
-    --main-circle-size: 16rem;
+    --main-circle-size: 10rem;
     width: var(--main-circle-size);
     height: var(--main-circle-size);
     .background {

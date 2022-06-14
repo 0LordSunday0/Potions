@@ -10,13 +10,15 @@
   </head>
   <body>
     <div class="controls">
-      <div class="potion-container" id="red" draggable="true">
+      <button class="spawn red"><h1>Red Potion</h1></button>
+      <button class="spawn blue"><h1>Blue Potion</h1></button>
+      <div class="potion-container draggable template" id="red-potion" draggable="true">
         <div class="shadow"></div>
         <div class="background">
             <div class="liquid" id="red"></div>
         </div>
       </div>
-      <div class="potion-container" id="red" draggable="true">
+      <div class="potion-container draggable template" id="blue-potion" draggable="true">
         <div class="shadow"></div>
         <div class="background">
             <div class="liquid" id="blue"></div>
@@ -25,18 +27,18 @@
     </div>
     
     <div class="potion-cupboard">
-      <div class="zero-zero"></div>
-      <div class="one-one" class="container"></div>
-      <div class="two-two" class="container"></div>
-      <div class="one-zero" class="container"></div>
-      <div class="two-zero" class="container"></div>
-      <div class="zero-one" class="container"></div>
-      <div class="zero-two" class="container"></div>
-      <div class="one-two" class="container"></div>
-      <div class="two-one" class="container"></div>
+      <div class="zero-zero container"></div>
+      <div class="one-one container"></div>
+      <div class="two-two container"></div>
+      <div class="one-zero container"></div>
+      <div class="two-zero container"></div>
+      <div class="zero-one container"></div>
+      <div class="zero-two container"></div>
+      <div class="one-two container"></div>
+      <div class="two-one container"></div>
     </div>
-
-    <script src="javascript/potion.js"></script>
-    
   </body>
+
+  <script src="javascript/potion.js"></script>
+
 </html>
