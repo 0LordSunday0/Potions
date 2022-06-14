@@ -1,4 +1,4 @@
-html, body {
+html, body, ul, li {
   margin: 0;
   padding: 0;
   display: block;
@@ -8,20 +8,18 @@ body {
   min-height: 100vh;
   min-width: 100vw;
   background-color: #111010;
-  justify-content: center;
-  align-items: center;
   display: flex;
 }
 
 .potion-container {
   --main-bg-color: #6e6362;
-  --main-circle-size: 50rem;
+  --main-circle-size: 16rem;
   width: var(--main-circle-size);
   height: var(--main-circle-size);
   --circle-ring-size: calc(var(--main-circle-size) / 16);
   --circle-ring-colour: #827473;
   --ring-shadow-colour: #564e4d;
-  position: absolute;
+  position: relative;
 }
 
 .potion-container .background {
@@ -137,6 +135,63 @@ body {
   top: 95%;
   left: 50%;
   transform: translateX(-50%);
+}
+
+.potion-cupboard {
+  height: 80vh;
+  aspect-ratio: 1 / 1;
+  background-color: #fff;
+  border: 1rem solid #fff;
+  grid-template: "zero-zero one-zero two-zero" 1fr
+                 "zero-one one-one two-one" 1fr
+                 "zero-two one-two two-two" 1fr
+                 / 1fr 1fr 1fr;
+  grid-auto-flow: row;
+  gap: 1rem;
+  display: grid;
+}
+
+.potion-cupboard > * {
+  background-color: brown;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.zero-zero {
+  grid-area: zero-zero;
+}
+
+.one-one {
+  grid-area: one-one;
+}
+
+.two-two {
+  grid-area: two-two;
+}
+
+.one-zero {
+  grid-area: one-zero;
+}
+
+.two-zero {
+  grid-area: two-zero;
+}
+
+.zero-one {
+  grid-area: zero-one;
+}
+
+.zero-two {
+  grid-area: zero-two;
+}
+
+.one-two {
+  grid-area: one-two;
+}
+
+.two-one {
+  grid-area: two-one;
 }
 
 /*# sourceMappingURL=index.c74267d1.css.map */

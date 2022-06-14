@@ -1,0 +1,41 @@
+.potion-cupboard {  
+    display: grid;
+    height: 80vh;
+    aspect-ratio: 1/1;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 1rem 1rem;
+    background-color: white;
+    border: 1rem solid white;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "zero-zero one-zero two-zero"
+      "zero-one one-one two-one"
+      "zero-two one-two two-two";
+  }
+
+  .potion-cupboard >*{
+      background-color: brown;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  
+  .zero-zero { grid-area: zero-zero; }
+  
+  .one-one { grid-area: one-one; }
+  
+  .two-two { grid-area: two-two; }
+  
+  .one-zero { grid-area: one-zero; }
+  
+  .two-zero { grid-area: two-zero; }
+  
+  .zero-one { grid-area: zero-one; }
+  
+  .zero-two { grid-area: zero-two; }
+  
+  .one-two { grid-area: one-two; }
+  
+  .two-one { grid-area: two-one; }
+  

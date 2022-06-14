@@ -1,4 +1,4 @@
-html, body {
+html, body, ul, li {
     margin: 0;
     padding: 0;
     display: block;
@@ -6,17 +6,15 @@ html, body {
 
 body{
     display: flex;
-    justify-content: center;
-    align-items: center;
     min-height: 100vh;
     min-width: 100vw;
     background-color: rgb(17, 16, 16);
 }
 
 .potion-container {
-    position: absolute;
+    position: relative;
     --main-bg-color: #6E6362;
-    --main-circle-size: 50rem;
+    --main-circle-size: 16rem;
     width: var(--main-circle-size);
     height: var(--main-circle-size);
     .background {
